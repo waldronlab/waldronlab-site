@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waldron Lab - Redirecting...</title>
+    <script>
+        // This script handles routing for single page applications on GitHub Pages
+        // When GitHub returns a 404, this page is served, and we redirect to the SPA
+        
+        // Get the path from the URL
+        const pathSegments = window.location.pathname.split('/').filter(Boolean);
+        
+        // Determine the base path for GitHub Pages vs custom domain
+        let basePath = '/';
+        
+        // If deployed to a GitHub Pages subdomain (username.github.io/repo-name/)
+        // the first segment will be the repo name
+        if (pathSegments.length > 0 && !window.location.hostname.endsWith('waldronlab.io')) {
+            // Preserve the first segment as the base path
+            basePath = '/' + pathSegments[0] + '/';
+        }
+        
+        // Redirect to the index.html with the original path preserved as a hash
+        const redirectPath = pathSegments.join('/');
+        window.location.replace(basePath + '#/' + redirectPath);
+    </script>
+</head>
+<body>
+    <p>Redirecting to the application...</p>
+</body>
+</html>
