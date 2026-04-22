@@ -355,11 +355,21 @@ My lab aims to generate new insights into human health, disease, and treatment t
     },
     {
       id: 'lm6',
-      name: 'Ouma Ronald',
+      name: 'Ouma Ronald, BSE',
+      title: 'Software Engineer',
       imageUrl: '/assets/img/Ronald.jpg',
       excerpt:
-        'Software engineer with expertise in Java, Python, JavaScript, Next.js, and Node.js; contributing to open source and expanding skills in R.',
+        'Software engineer and a Certified Clinical Nurse. Focuses on AI/ML. ',
+      github: 'RonaldRonnie',
     },
+    {
+      id: 'lm7',
+      name: 'Eslam Abousamra, PhD',
+      title: 'Researcher',
+      imageUrl: '/assets/img/Eslam.jpeg',
+      excerpt:
+        'Eslam is a researcher specializing in cancer image analysis, focusing on the integration of pathology whole-slide image (WSI) embeddings with multi-omics and clinical data..',
+    }
   ],
   labAlumni: [
     {

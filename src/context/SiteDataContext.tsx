@@ -14,7 +14,8 @@ import { defaultSiteData } from '../data/defaultSiteData'
 import { deepMerge } from '../lib/deepMerge'
 import type { SiteData, ThemeId } from '../types/site'
 
-const STORAGE_KEY = 'waldron-lab-site-v1'
+const STORAGE_KEY = 'waldron-lab-site-v2'
+const LEGACY_STORAGE_KEY = 'waldron-lab-site-v1'
 
 function loadStored(): SiteData {
   try {
@@ -36,6 +37,10 @@ function loadStored(): SiteData {
       return result
     }
 
+    ;(merged as any).labMembers = mergePeopleArrayById(
+      base.labMembers,
+      Array.isArray(parsed.labMembers) ? (parsed.labMembers as any) : base.labMembers,
+    )
     ;(merged as any).labAlumni = mergePeopleArrayById(
       base.labAlumni,
       Array.isArray(parsed.labAlumni) ? (parsed.labAlumni as any) : base.labAlumni
@@ -102,6 +107,7 @@ export function SiteDataProvider({ children }: { children: ReactNode }) {
 
   const resetToDefaults = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY)
+    localStorage.removeItem(LEGACY_STORAGE_KEY)
     setDataState(structuredClone(defaultSiteData))
   }, [])
 

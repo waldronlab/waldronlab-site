@@ -79,17 +79,7 @@ export function Footer() {
           className="mt-12 flex flex-col items-center gap-4 border-t pt-8 text-center text-xs md:flex-row md:justify-between md:text-left"
           style={{ borderColor: 'var(--lab-border)', color: 'var(--lab-muted)' }}
         >
-          <p className="max-w-md leading-relaxed">
-            Portrait and site assets courtesy of{' '}
-            <a
-              href="https://waldronlab.io"
-              className="font-medium underline decoration-[color-mix(in_srgb,var(--lab-accent)_50%,transparent)] underline-offset-2 transition-colors hover:text-[var(--lab-text)]"
-              style={{ color: 'var(--lab-accent)' }}
-            >
-              waldronlab.io
-            </a>
-            .
-          </p>
+          <p className="max-w-md leading-relaxed">Developed by Levi Waldron.</p>
           <img
             src={assetUrl(meta.authorAvatar)}
             alt=""
